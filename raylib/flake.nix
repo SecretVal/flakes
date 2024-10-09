@@ -1,5 +1,5 @@
 {
-  description = "Example kickstart C/C++ cmake project.";
+  description = "Example raylib flake.";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -16,14 +16,14 @@
         ...
       }: let
         inherit (pkgs) stdenv;
-        name = "raylib-flake";
+        name = "raylib";
         version = "0.1.0";
       in {
         devShells.default = pkgs.mkShell {
           inputsFrom = [self'.packages.default];
         };
 
-        templates = {
+        packages = {
           default = stdenv.mkDerivation {
             inherit version;
             pname = name;
