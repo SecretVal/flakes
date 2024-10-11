@@ -1,5 +1,5 @@
 {
-  description = "A simple c-project flake";
+  description = "A flake for c";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
