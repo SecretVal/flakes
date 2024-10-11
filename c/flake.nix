@@ -1,5 +1,5 @@
 {
-  description = "Example raylib flake.";
+  description = "A simple c-project flake";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -15,8 +15,9 @@
         system,
         ...
       }: let
-        inherit (pkgs) stdenv;
-        name = "raylib";
+        inherit (pkgs) dockerTools cmake;
+        inherit (dockerTools) buildImage;
+        name = "c";
         version = "0.1.0";
       in {
         devShells.default = pkgs.mkShell {
@@ -24,15 +25,15 @@
         };
 
         packages = {
-          default = stdenv.mkDerivation {
+          default = pkgs.stdenv.mkDerivation {
             inherit version;
             pname = name;
             src = ./.;
 
-            buildInputs = with pkgs; [raylib];
+            buildInputs = [gcc];
 
             buildPhase = ''
-              gcc -lraylib -o ${name} main.c
+              gcc -o ${name} main.c
             '';
 
             installPhase = ''
