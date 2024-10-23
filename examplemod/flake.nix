@@ -1,5 +1,5 @@
 {
-  description = "A flake for a 1.21.1 minecraft mod";
+  description = "An example minecraft fabric mod";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };

@@ -1,9 +1,9 @@
 {
 	"required": true,
-	"package": "minecraftmod.mixin",
+	"package": "examplemod.mixin.client",
 	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
+	"client": [
+		"ExampleClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
