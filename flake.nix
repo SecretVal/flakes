@@ -1,6 +1,6 @@
 {
   description = "Some flakes";
-  outputs = {}: {
+  outputs = {self}: {
     templates = {
       raylib = {
         path = ./raylib;
