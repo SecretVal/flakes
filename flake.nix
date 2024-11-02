@@ -1,6 +1,6 @@
 {
   description = "Some flakes";
-  outputs = {self}: {
+  outputs = {}: {
     templates = {
       raylib = {
         path = ./raylib;
@@ -13,6 +13,10 @@
       examplemod = {
         path = ./examplemod;
         description = "An example minecraft fabric mod";
+      };
+      bevy-example = {
+        path = ./bevy-example;
+        description = "An example bevy project";
       };
     };
   };
