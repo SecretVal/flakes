@@ -18,8 +18,8 @@
         path = ./bevy-example;
         description = "An example bevy project";
       };
-      glfw-example = {
-        path = ./glew-example;
+      glfw-c = {
+        path = ./glfw-c;
         description = "An example glfw project";
       };
     };

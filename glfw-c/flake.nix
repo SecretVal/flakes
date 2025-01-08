@@ -12,7 +12,7 @@
         pkgs,
         ...
       }: let
-        name = "gflfw-example";
+        name = "gflfw-c";
         version = "0.1.0";
       in {
         devShells.default = pkgs.mkShell {
