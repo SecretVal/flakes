@@ -8,15 +8,10 @@
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
 
       perSystem = {
-        config,
         self',
-        inputs',
         pkgs,
-        system,
         ...
       }: let
-        inherit (pkgs) dockerTools cmake;
-        inherit (dockerTools) buildImage;
         name = "c";
         version = "0.1.0";
       in {
@@ -30,7 +25,7 @@
             pname = name;
             src = ./.;
 
-            buildInputs = [gcc];
+            buildInputs = with pkgs; [gcc];
 
             buildPhase = ''
               gcc -o ${name} main.c
