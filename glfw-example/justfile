@@ -1,0 +1,16 @@
+default:
+  rm -rf build
+  mkdir build
+  gcc -Wall -Wextra -lGL -lGLEW -lglfw main.c -o build/glfw-example
+  ./build/glfw-example
+
+build:
+  rm -rf build
+  mkdir build
+  gcc -Wall -Wextra -lGL -lGLEW -lglfw main.c -o build/glfw-example
+
+nix-run:
+  nix run
+
+nix-build:
+  nix build
