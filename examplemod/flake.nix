@@ -4,10 +4,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-  }: let
+  outputs = {nixpkgs}: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
     libs = with pkgs; [
       libpulseaudio
