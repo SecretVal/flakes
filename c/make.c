@@ -3,8 +3,7 @@
 #include <stc.h> 
 #include <stdbool.h> 
 
-#define project_name "c"
-#define project_exe "./c"
+#define project_name "./c"
 
 int main(int argc, char **argv) {
   rebuild_file(argv, argc);
@@ -22,7 +21,7 @@ int main(int argc, char **argv) {
     char *sub_cmd = shift(argv, argc);
     if (strcmp(sub_cmd, "run") == 0) {
       Cmd cmd = {0};
-      cmd_push(&cmd, project_exe);
+      cmd_push(&cmd, project_name);
       int res = cmd_exec(&cmd);
       if (res != 0) return res;
       valid_cmd = true;
