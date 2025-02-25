@@ -1,7 +1,10 @@
 {
   description = "A flake for c";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    stc.url = "github:secretval/stc";
+  };
 
   outputs = inputs @ {flake-parts, ...}:
     flake-parts.lib.mkFlake {inherit inputs;} {
@@ -25,7 +28,7 @@
             pname = name;
             src = ./.;
 
-            buildInputs = with pkgs; [gcc];
+            buildInputs = with pkgs; [gcc inputs.stc.packages.${system}.default];
 
             buildPhase = ''
               gcc -o ${name} main.c
