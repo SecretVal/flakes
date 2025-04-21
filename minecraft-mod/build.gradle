@@ -22,7 +22,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"examplemod" {
+		"minecraft-mod" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}

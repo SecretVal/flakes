@@ -10,8 +10,8 @@
         path = ./c;
         description = "A flake for c";
       };
-      examplemod = {
-        path = ./examplemod;
+      minecraft-mod = {
+        path = ./minecraft-mod;
         description = "An example minecraft fabric mod";
       };
       bevy-example = {
